@@ -1,0 +1,98 @@
+[
+	{
+		"id": 1,
+		"title": "Asado",
+		"description": "Carne",
+		"code": "code1",
+		"price": 1500,
+		"status": true,
+		"stock": 100,
+		"category": "Carne",
+		"thumbnail": [
+			{
+				"asado": "./public/images/asado.jpg"
+				
+			}
+		]
+	},
+	{
+		"id": 2,
+		"title": "Cerveza",
+		"description": "Bebidas",
+		"code": "code2",
+		"price": 500,
+		"status": true,
+		"stock": 200,
+		"category": "Bebidas",
+		"thumbnail": [
+			{
+				"Cerveza": "./public/images/Cerveza1.jpg"
+				
+			}
+		]
+	},
+	{
+		"id": 3,
+		"title": "Gaseosa",
+		"description": "Bebidas",
+		"code": "code3",
+		"price": 300,
+		"status": true,
+		"stock": 300,
+		"category": "Bebidas",
+		"thumbnail": [
+			{
+				"Gaseosa": "./public/images/gaseosa.jpg"
+				
+			}
+		]
+	},
+	{
+		"id": 4,
+		"title": "Leche",
+		"description": "Lacteos",
+		"code": "code4",
+		"price": 400,
+		"status": true,
+		"stock": 400,
+		"category": "Lacteos",
+		"thumbnail": [
+			{
+				"image1": "./public/images/leche.jpg"
+				
+			}
+		]
+	},
+	{
+		"id": 5,
+		"title": "Manteca",
+		"description": "Lacteos",
+		"code": "code5",
+		"price": 500,
+		"status": true,
+		"stock": 500,
+		"category": "Lacteos",
+		"thumbnail": [
+			{
+				"manteca": "./public/images/manteca.jpg"
+				
+			}
+		]
+	},
+    {
+		"id": 6,
+		"title": "Yerba",
+		"description": "Almacen",
+		"code": "code5",
+		"price": 500,
+		"status": true,
+		"stock": 50,
+		"category": "Almacen",
+		"thumbnail": [
+			{
+				"Yerba": "./public/images/yerba.jpg"
+				
+			}
+		]
+	}
+]
