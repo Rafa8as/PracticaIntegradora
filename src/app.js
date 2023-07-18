@@ -7,7 +7,8 @@ import mongoose from "mongoose";
 import {messageModel} from "./dao/mongo/messages.model.js";
 import handlebars from "express-handlebars";
 import __dirname from "./utils.js";
-import {Server} from "socket.io";
+import {Server, Socket} from "socket.io";
+import { productModel } from "./dao/mongo/product.model.js";
 
 
 const app = express ();
@@ -36,28 +37,43 @@ const httpServer = app.listen (PORT, host, () => {console.log (`Server arriba en
 
 const io = new Server(httpServer);
 
+io.on( "connection", async socket => {
+    console.log (`Cliente ${socket.id} conectado`);
+
+
+    const products = await productModel.find().lean();
+    io.emit ("products", products);
+
+    productModel.watch().on("change", async change => {
+        const products = await productsRoute.find().lean();
+        io.emit ("products", products);
+    });
+
+
 const messages = [];
 
-io.on ("connection", (socket)=> {
-    console.log ("Cliente Conectado");
-    socket.emit ("products", products);
-
-    io.emit ("messagesLogs", messages);
-
-    socket.on ("user", (data)=>{
-        messages.push (data);
-        io.emit ("messagesLogs", messages);
-
+socket.on("user", async data => {
+    await messageModel.create ({
+        user: data.user,
+        message: data.messages,
     });
-    socket.on ("message", (data)=>{
-        messages.push (data);
-        io.emit ("messagesLogs", messages);
-        messageModel.create ({
+    const messagesLogs = await messageModel.find();
+    io.emit ("messagesLogs", messagesLogs);
+});
+
+  
+    socket.on ("message", async data =>{
+        await messageModel.create ({
             user: data.user,
             message: data.message,
         });
+
+        const messagesLogs = await messageModel.find ();
+       
+        io.emit ("messagesLogs", messagesLogs);
+        
     });
     socket.on ("disconnect", () => {
-        console.log ("Client Disconnected")
-    })
-})
+        console.log (`Client ${socket.id} disconnected`);
+    });
+});
