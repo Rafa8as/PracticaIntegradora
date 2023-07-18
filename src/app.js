@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import {messageModel} from "./dao/mongo/messages.model.js";
 import handlebars from "express-handlebars";
 import __dirname from "./utils.js";
-import {Server, Socket} from "socket.io";
+import {Server} from "socket.io";
 import { productModel } from "./dao/mongo/product.model.js";
 
 
