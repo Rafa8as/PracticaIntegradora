@@ -7,7 +7,7 @@
 		"price": 1500,
 		"status": true,
 		"stock": 100,
-		"category": "Carne",
+		"category": "Product",
 		"thumbnail": [
 			{
 				"asado": "./public/images/asado.jpg"
@@ -23,7 +23,7 @@
 		"price": 500,
 		"status": true,
 		"stock": 200,
-		"category": "Bebidas",
+		"category": "Product",
 		"thumbnail": [
 			{
 				"Cerveza": "./public/images/Cerveza1.jpg"
@@ -39,7 +39,7 @@
 		"price": 300,
 		"status": true,
 		"stock": 300,
-		"category": "Bebidas",
+		"category": "Product",
 		"thumbnail": [
 			{
 				"Gaseosa": "./public/images/gaseosa.jpg"
@@ -55,7 +55,7 @@
 		"price": 400,
 		"status": true,
 		"stock": 400,
-		"category": "Lacteos",
+		"category": "Product",
 		"thumbnail": [
 			{
 				"image1": "./public/images/leche.jpg"
@@ -71,7 +71,7 @@
 		"price": 500,
 		"status": true,
 		"stock": 500,
-		"category": "Lacteos",
+		"category": "Product",
 		"thumbnail": [
 			{
 				"manteca": "./public/images/manteca.jpg"
@@ -87,7 +87,7 @@
 		"price": 500,
 		"status": true,
 		"stock": 50,
-		"category": "Almacen",
+		"category": "Product",
 		"thumbnail": [
 			{
 				"Yerba": "./public/images/yerba.jpg"

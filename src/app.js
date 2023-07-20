@@ -2,6 +2,7 @@ import express from "express";
 import productsRoute from "./routes/products.router.js";
 import cartsRoute from "./routes/carts.router.js";
 import viewRoute from "./routes/views.router.js";
+import messagesRoute from "./routes/messages.router.js"
 import products from "./data/products.json" assert {type: "json"};
 import mongoose from "mongoose";
 import {messageModel} from "./dao/mongo/messages.model.js";
@@ -23,12 +24,13 @@ const connection = mongoose.connect ('mongodb+srv://rafa8as:Odarita23@cluster0.m
 app.engine ('handlebars', handlebars.engine());
 app.set ('views', __dirname + '/views');
 app.set ('view engine', 'handlebars');
-app.use (express.static (__dirname + '/public'));
+app.use (express.static ( `${__dirname}/public`));
 
 app.use (express.urlencoded ({extended: true}));
 app.use (express.json ());
 app.use ('/api/products', productsRoute);
 app.use ('/api/carts', cartsRoute);
+app.use ('/api/messages', messagesRoute);
 app.use ('/', viewRoute);
 
 
@@ -45,7 +47,7 @@ io.on( "connection", async socket => {
     io.emit ("products", products);
 
     productModel.watch().on("change", async change => {
-        const products = await productsRoute.find().lean();
+        const products = await productModel.find().lean();
         io.emit ("products", products);
     });
 

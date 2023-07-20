@@ -23,13 +23,13 @@ let chatBox = document.querySelector(".input-text");
 
 
 Swal.fire({
-	title: "Welcome",
-	text: "Please enter your email",
+	title: "Bienvenido",
+	text: "Por Favor, ingrese su Email",
 	input: "text",
 	inputValidator: (value) => {
 		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!value.match(regex)) {
-			return `You must to complete with a valid email.`;
+			return `Debe completar el campo con un Email valido.`;
 		};
 	},
 	allowOutsideClick: false,

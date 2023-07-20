@@ -1,0 +1,14 @@
+<div>
+    <h1>Carrito</h1>
+        <div>
+            {{#each payload}}
+            <div>
+                <p>Producto: {{this._id._id}}</p>
+                <p>Titulo: {{this._id.title}}</p>
+                <p>Precio: ${{this._id.price}}</p>
+                <p>Cantidad: {{this.quantity}}</p>
+            </div>
+            {{#each}}
+        </div>
+    
+</div>
