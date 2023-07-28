@@ -15,7 +15,7 @@ const initializePassport = () => {
 				const { first_name, last_name, email } = req.body;
 				try {
 
-					if (email == "adminCoder@coder.com") {
+					if (email == "rafa8as@gmail.com") {
 						return done(null, false, {status: 200, message: 'Cant create an admin account'});
 					};
 
@@ -49,7 +49,7 @@ const initializePassport = () => {
 			async (username, password, done) => {
 				try {
 
-					if (username == "rafa8as@gmail" && password == "Odarita23") {
+					if (username == "rafa8as@gmail.com" && password == "Odarita23") {
 						const user = await adminModel.findOne({ email: username });
 						if (!user) {
 							const user = await adminModel.create({
