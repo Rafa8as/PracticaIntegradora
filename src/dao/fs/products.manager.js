@@ -10,6 +10,8 @@ export default class ProductsManager {
 	};
 
 	getProducts() {
+
+		
 		
 		if (!fs.existsSync(this.#path)) {
 			try {

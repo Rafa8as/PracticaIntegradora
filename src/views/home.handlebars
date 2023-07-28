@@ -1,5 +1,12 @@
 <div>
     <h1>Home</h1>
+
+    <form action="/api/sessions/logout" method="post"
+    >
+    <p>Bienvenido {{user.email}}</p>
+    <p>Role:{{user.role}} </p>
+    <input type="submit" value="Logout">
+    </form>
   
         <ul>
         <li> <a href="./products">Productos</a></li>
