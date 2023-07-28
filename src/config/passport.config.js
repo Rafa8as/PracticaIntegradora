@@ -49,11 +49,11 @@ const initializePassport = () => {
 			async (username, password, done) => {
 				try {
 
-					if (username == "adminCoder@coder.com" && password == "adminCod3r123") {
+					if (username == "rafa8as@gmail" && password == "Odarita23") {
 						const user = await adminModel.findOne({ email: username });
 						if (!user) {
 							const user = await adminModel.create({
-								email: "adminCoder@coder.com",
+								email: "rafa8as@gmail",
 								password: createHash(password),
 								role: "admin",
 							});
